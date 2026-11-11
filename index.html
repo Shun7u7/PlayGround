@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101c35" />
+  <title>Operación: Santa a la vista</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Operación Santa a la vista">
+        <span class="brand-mark">❄</span>
+        <span><strong>OPERACIÓN</strong><small>SANTA A LA VISTA</small></span>
+      </a>
+      <div class="season-tag"><span class="live-dot"></span> NOCHEBUENA · 24 DIC</div>
+      <button class="icon-button sound-toggle" id="soundButton" aria-label="Activar sonido" title="Sonido">♪</button>
+    </header>
+
+    <section class="game-layout" aria-label="Juego">
+      <aside class="side-panel left-panel">
+        <div class="mission-label"><span class="tiny-star">✦</span> MISIÓN ACTIVA</div>
+        <h1>Encuentra<br>al <em>viejo</em><br>Santa.</h1>
+        <p class="mission-copy">Se escabulle entre los tejados. ¡Márcalo con una bola de nieve antes de que se acabe el tiempo!</p>
+        <div class="objective-card"><span class="objective-icon">🎅</span><span><b>OBJETIVO</b><small>Santa en movimiento</small></span><i>↗</i></div>
+        <div class="best-score"><span>MEJOR PUNTUACIÓN</span><strong id="bestScore">00</strong></div>
+      </aside>
+
+      <div class="play-column">
+        <div class="hud">
+          <div class="hud-card score-card"><span class="hud-icon">✦</span><span><small>ACIERTOS</small><strong id="score">00 <i>/ 05</i></strong></span></div>
+          <div class="hud-card timer-card"><span class="hud-icon">◷</span><span><small>TIEMPO</small><strong id="timer">45<span>s</span></strong></span></div>
+          <div class="hud-card ammo-card"><span class="hud-icon">❄</span><span><small>BOLAS DE NIEVE</small><strong id="ammo">●●●●●●</strong></span></div>
+        </div>
+        <div class="scene-wrap" id="sceneWrap">
+          <canvas id="gameCanvas" aria-label="Escenario nevado. Toca para apuntar y lanzar una bola de nieve."></canvas>
+          <div class="scene-vignette"></div>
+          <div class="scene-caption"><span class="radar-dot"></span><span id="statusText">RASTREANDO SEÑAL...</span></div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+          <div class="overlay" id="startOverlay">
+            <div class="intro-card">
+              <div class="intro-kicker"><span>✦</span> ENCARGO ESPECIAL <span>✦</span></div>
+              <div class="intro-santa">🎅</div>
+              <h2>¡Que no se te<br><em>escape!</em></h2>
+              <p>Santa está haciendo una ronda clandestina por el pueblo. Localízalo cuando cruce a la vista y dale un toque de nieve.</p>
+              <button class="play-button" id="playButton"><span>EMPEZAR MISIÓN</span><b>→</b></button>
+              <div class="intro-hint">APUNTA · ESPERA A QUE SE MUEVA · TOCA PARA LANZAR</div>
+            </div>
+          </div>
+          <div class="overlay hidden" id="endOverlay">
+            <div class="intro-card result-card">
+              <div class="intro-kicker" id="resultKicker">MISIÓN COMPLETADA</div>
+              <div class="intro-santa" id="resultIcon">🎄</div>
+              <h2 id="resultTitle">¡Bien hecho!</h2>
+              <p id="resultCopy">La aldea vuelve a estar tranquila.</p>
+              <button class="play-button" id="againButton"><span>JUGAR DE NUEVO</span><b>↻</b></button>
+              <div class="intro-hint" id="resultHint">ACIERTOS: 00</div>
+            </div>
+          </div>
+        </div>
+        <div class="controls-bar">
+          <div class="control-tip"><span class="tip-icon">⌖</span><span><b>TOCA PARA APUNTAR</b><small>Un toque más para lanzar</small></span></div>
+          <div class="wind"><span class="wind-icon">〰</span><span><b>VIENTO</b><small id="windText">NNO · SUAVE</small></span><div class="wind-meter"><i></i><i></i><i class="active"></i><i></i><i></i></div></div>
+          <button class="reload-button" id="reloadButton" aria-label="Recargar bolas de nieve"><span>↻</span> RECARGAR <kbd>R</kbd></button>
+        </div>
+      </div>
+
+      <aside class="side-panel right-panel">
+        <div class="weather-card"><div class="weather-top"><span>CLIMA LOCAL</span><span>◦</span></div><div class="weather-main"><span class="weather-icon">☾</span><strong>−4°<small>C</small></strong></div><div class="weather-bottom"><span>NEVADA LIGERA</span><span class="weather-flakes">✳ ✳ ✳</span></div></div>
+        <div class="intel-card"><div class="intel-heading"><span>◉</span> INTELIGENCIA</div><div class="intel-line"><span class="intel-dot"></span><p>Movimiento detectado<br><b>en el sector norte</b></p></div><div class="signal-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small class="signal-caption">SEÑAL DE RADAR</small></div>
+        <div class="tip-card"><span>CONSEJO DEL ELFO</span><p>“La paciencia es una virtud… ¡pero apunta rápido!”</p><span class="tip-sparkle">✧</span></div>
+      </aside>
+    </section>
+    <footer><span>⛄ <b>FROSTY OPS</b> <i>·</i> JUGUETE OFICIAL DEL POLO NORTE</span><span class="footer-right">HECHO CON UN POQUITO DE MAGIA <b>✦</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
