@@ -23,8 +23,9 @@
       <aside class="side-panel left-panel">
         <div class="mission-label"><span class="tiny-star">✦</span> MISIÓN ACTIVA</div>
         <h1>Encuentra<br>al <em>viejo</em><br>Santa.</h1>
-        <p class="mission-copy">Se escabulle entre los tejados. ¡Márcalo con una bola de nieve antes de que se acabe el tiempo!</p>
+        <p class="mission-copy">Recorre escenarios nevados llenos de escondites. ¡Encuentra a Santa entre máquinas, cajas y autos!</p>
         <div class="objective-card"><span class="objective-icon">🎅</span><span><b>OBJETIVO</b><small>Santa en movimiento</small></span><i>↗</i></div>
+        <div class="objective-card level-card"><span class="objective-icon">🗺️</span><span><b id="levelName">NIVEL 1</b><small id="mapName">Fábrica de juguetes</small></span><i>✦</i></div>
         <div class="best-score"><span>MEJOR PUNTUACIÓN</span><strong id="bestScore">00</strong></div>
       </aside>
 
@@ -35,7 +36,7 @@
           <div class="hud-card ammo-card"><span class="hud-icon">❄</span><span><small>BOLAS DE NIEVE</small><strong id="ammo">●●●●●●</strong></span></div>
         </div>
         <div class="scene-wrap" id="sceneWrap">
-          <canvas id="gameCanvas" aria-label="Escenario nevado. Toca para apuntar y lanzar una bola de nieve."></canvas>
+          <canvas id="gameCanvas" aria-label="Escenario con perspectiva. Desliza para apuntar o toca dos veces para lanzar una bola de nieve."></canvas>
           <div class="scene-vignette"></div>
           <div class="scene-caption"><span class="radar-dot"></span><span id="statusText">RASTREANDO SEÑAL...</span></div>
           <div class="toast" id="toast" aria-live="polite"></div>
@@ -44,7 +45,7 @@
               <div class="intro-kicker"><span>✦</span> ENCARGO ESPECIAL <span>✦</span></div>
               <div class="intro-santa">🎅</div>
               <h2>¡Que no se te<br><em>escape!</em></h2>
-              <p>Santa está haciendo una ronda clandestina por el pueblo. Localízalo cuando cruce a la vista y dale un toque de nieve.</p>
+              <p>Explora el taller de juguetes nevado. Santa corre y se esconde entre autos, máquinas y cajas. ¡Encuéntralo!</p>
               <button class="play-button" id="playButton"><span>EMPEZAR MISIÓN</span><b>→</b></button>
               <div class="intro-hint">APUNTA · ESPERA A QUE SE MUEVA · TOCA PARA LANZAR</div>
             </div>
